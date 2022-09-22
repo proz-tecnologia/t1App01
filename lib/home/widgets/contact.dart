@@ -15,24 +15,25 @@ class ContactWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          margin: EdgeInsets.all(8),
-          //padding: EdgeInsets.only(left: 8),
+          margin: const EdgeInsets.all(8),
           width: 50,
           height: 50,
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.amber,
           ),
-          child: Center(child: Text('lala')),
+          child: const Center(child: Text('lala')),
         ),
         //const SizedBox(width: 8),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(name),
-            Text(profissao),
-          ],
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(name),
+              Text(profissao),
+            ],
+          ),
         )
       ],
     );
