@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:first_app/design_system/my_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -70,7 +71,7 @@ class _HomePageState extends State<HomePage> {
             decoration: BoxDecoration(
               border: Border.all(
                 width: 3.0,
-                color: const Color.fromARGB(255, 26, 24, 30),
+                color: MyColor.warning,
               ),
               borderRadius: BorderRadius.circular(36),
             ),

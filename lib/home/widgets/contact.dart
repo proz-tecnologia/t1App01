@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:first_app/design_system/my_images.dart';
 import 'package:flutter/material.dart';
 
 class ContactWidget extends StatelessWidget {
@@ -22,7 +25,10 @@ class ContactWidget extends StatelessWidget {
             shape: BoxShape.circle,
             color: Colors.amber,
           ),
-          child: const Center(child: Text('lala')),
+          child: Image.asset(
+            img01,
+            fit: BoxFit.cover,
+          ),
         ),
         //const SizedBox(width: 8),
         Expanded(
