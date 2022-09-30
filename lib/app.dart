@@ -1,7 +1,6 @@
 import 'package:first_app/design_system/my_color.dart';
+import 'package:first_app/features/profile/profile_page.dart';
 import 'package:flutter/material.dart';
-
-import 'home/home_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -12,10 +11,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
       darkTheme: ThemeData(
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         appBarTheme: const AppBarTheme(backgroundColor: MyColor.success),
       ),
-      home: const HomePage(title: 'Cindi'),
+      home: ProfilePage(),
     );
   }
 }
