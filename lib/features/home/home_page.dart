@@ -2,9 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
-import 'widgets/my_bottom_bar.dart';
-import 'widgets/my_expansion.dart';
-import 'widgets/my_grid.dart';
+import 'widgets/widgets.dart';
 
 class HomePage extends StatefulWidget {
   final String title;

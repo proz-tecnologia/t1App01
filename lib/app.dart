@@ -13,6 +13,24 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         brightness: Brightness.light,
         appBarTheme: const AppBarTheme(backgroundColor: MyColor.success),
+        inputDecorationTheme: const InputDecorationTheme(
+          fillColor: Colors.black,
+          disabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.yellow, width: 3),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.green, width: 3),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.black, width: 3),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.red),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.red),
+          ),
+        ),
       ),
       home: ProfilePage(),
     );
