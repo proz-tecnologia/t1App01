@@ -1,8 +1,6 @@
 import 'package:first_app/shared/widgets/logo.dart';
 import 'package:flutter/material.dart';
 
-import '../login/login_page.dart';
-
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
 
@@ -14,14 +12,22 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
+    print('dependeee');
     Future.delayed(const Duration(seconds: 3)).then((value) {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const LoginPage(),
-          fullscreenDialog: true,
-        ),
-      );
+      Navigator.of(context).pushReplacementNamed('login');
     });
+  }
+
+  @override
+  void didUpdateWidget(covariant SplashPage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    print('didUpdateWidget');
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    print('didChangeDependencies');
   }
 
   @override
