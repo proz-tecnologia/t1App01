@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:first_app/design_system/my_images.dart';
 import 'package:first_app/shared/widgets/logo.dart';
 import 'package:flutter/material.dart';
@@ -7,47 +9,51 @@ class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   void onPressed() {
-    print('outrooo clicou');
-  }
-
-  void outro() {
-    print('kaioo legal');
+    log('Social Button');
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const SizedBox(height: kToolbarHeight),
+            const SizedBox(height: 64),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ///TODO: Ajeitar o espaçamento aqui
-                const Spacer(),
-                const LogoWidget(
-                  logoHeight: 50,
-                  innerHeight: 25,
+                const SizedBox(
+                  height: 50,
+                  width: 50,
+                  child: LogoWidget(logoHeight: 50, innerHeight: 25),
                 ),
-                const SizedBox(width: 8),
+                const SizedBox(
+                  width: 12.0,
+                ),
                 Text('PROJETO RUNAS',
-                    textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.headline5),
-                const Spacer(),
               ],
             ),
-            const SizedBox(height: 16),
-            const TextField(),
+            const SizedBox(height: 32),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Email',
+                labelStyle: Theme.of(context).textTheme.subtitle1,
+              ),
+            ),
             const SizedBox(height: 16),
             TextField(
               decoration: InputDecoration(
+                labelStyle: Theme.of(context).textTheme.subtitle1,
+                labelText: 'Senha',
                 suffixIcon: IconButton(
                   onPressed: () {},
-                  icon: const Icon(Icons.visibility_off),
+                  icon: const Icon(
+                    Icons.visibility_off,
+                    color: Color(0xFFBAC9D4),
+                  ),
                 ),
               ),
             ),
@@ -55,26 +61,35 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
+                  padding: const EdgeInsets.only(top: 12.0),
                   child: Text('Recuperar senha',
                       style: Theme.of(context).textTheme.subtitle1),
                 ),
               ],
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 24),
             SizedBox(
               width: double.infinity,
+              height: 48,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pushNamed('home');
                 },
-                child: const Text('Entrar'),
+                child: const Text(
+                  'Entrar',
+                  style: TextStyle(
+                      color: Color(0xFF262D2A), fontWeight: FontWeight.bold),
+                ),
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 12),
             OutlinedButton(
               onPressed: () {},
-              child: const Text('Olaa'),
+              style: OutlinedButton.styleFrom(
+                backgroundColor: Colors.transparent,
+                foregroundColor: const Color(0xFFFFC82C),
+              ),
+              child: const Text('Cadastre-se'),
             ),
             const SizedBox(height: 16),
             Row(
@@ -88,7 +103,7 @@ class LoginPage extends StatelessWidget {
                 const Expanded(child: Divider(color: Colors.white)),
               ],
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 24),
             SocialButton(
               imagePath: google,
               text: 'Login with Google',
@@ -117,7 +132,7 @@ class SocialButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        primary: Colors.black,
+        backgroundColor: Colors.black,
         fixedSize: const Size.fromHeight(50),
       ),
       onPressed: onPressed,
