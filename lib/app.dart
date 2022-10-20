@@ -2,8 +2,10 @@ import 'package:first_app/design_system/my_color.dart';
 import 'package:first_app/design_system/text_theme.dart';
 import 'package:first_app/features/authentication/splash.dart';
 import 'package:first_app/features/home/home_page.dart';
-import 'package:first_app/features/authentication/login_page.dart';
+import 'package:first_app/features/login/login_page.dart';
 import 'package:flutter/material.dart';
+
+import 'features/create_todo/create_todo.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -16,8 +18,9 @@ class MyApp extends StatelessWidget {
       home: const SplashPage(),
       routes: {
         'splash': (context) => const SplashPage(),
-        'login': (context) => const LoginPage(),
+        'login': (context) => LoginPage(),
         'home': (context) => const HomePage(title: 'Cindi'),
+        'create-todo': (context) => CreateTodo(),
       },
       darkTheme: ThemeData(
         brightness: Brightness.light,
@@ -33,6 +36,7 @@ class MyApp extends StatelessWidget {
               color: Color(0xFFBAC9D4),
             ),
           ),
+          hintStyle: TextStyle(color: Color(0xFFBAC9D4)),
           focusedBorder: UnderlineInputBorder(
             borderSide: BorderSide(
               color: Color(0xFFBAC9D4),

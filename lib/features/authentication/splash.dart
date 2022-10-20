@@ -1,3 +1,5 @@
+import 'package:first_app/features/authentication/splash_controller.dart';
+import 'package:first_app/features/authentication/splash_states.dart';
 import 'package:first_app/shared/widgets/logo.dart';
 import 'package:flutter/material.dart';
 
@@ -9,25 +11,21 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  final controller = SplashController();
+
   @override
   void initState() {
     super.initState();
-    print('dependeee');
+
     Future.delayed(const Duration(seconds: 3)).then((value) {
-      Navigator.of(context).pushReplacementNamed('login');
+      controller.isAuthenticated().then((value) {
+        if (value is SplashStateAuthenticated) {
+          Navigator.of(context).pushReplacementNamed('home');
+        } else {
+          Navigator.of(context).pushReplacementNamed('login');
+        }
+      });
     });
-  }
-
-  @override
-  void didUpdateWidget(covariant SplashPage oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    print('didUpdateWidget');
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    print('didChangeDependencies');
   }
 
   @override
