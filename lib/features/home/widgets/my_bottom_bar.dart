@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class MyBottomBar extends StatefulWidget {
-  const MyBottomBar({Key? key}) : super(key: key);
+  //final void Function(int index) changePage;
+  final ValueChanged<int> changePage;
+  const MyBottomBar({Key? key, required this.changePage}) : super(key: key);
 
   @override
   State<MyBottomBar> createState() => _MyBottomBarState();
@@ -16,6 +18,7 @@ class _MyBottomBarState extends State<MyBottomBar> {
         setState(() {
           index = value;
         });
+        widget.changePage(index);
       },
       showSelectedLabels: false,
       showUnselectedLabels: false,
