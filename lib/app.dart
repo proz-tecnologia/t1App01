@@ -1,6 +1,5 @@
 import 'package:first_app/design_system/my_color.dart';
 import 'package:first_app/design_system/text_theme.dart';
-import 'package:first_app/features/authentication/login_page.dart';
 import 'package:first_app/features/authentication/splash.dart';
 import 'package:first_app/features/home/home_page.dart';
 import 'package:first_app/features/login/login_page.dart';
