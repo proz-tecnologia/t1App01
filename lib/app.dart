@@ -54,13 +54,13 @@ class MyApp extends StatelessWidget {
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            primary: const Color(0xFFFFC82C),
+            backgroundColor: const Color(0xFFFFC82C),
             fixedSize: const Size.fromHeight(30),
           ),
         ),
         outlinedButtonTheme: OutlinedButtonThemeData(
             style: OutlinedButton.styleFrom(
-          primary: const Color(0xFFFFC82C),
+          backgroundColor: const Color(0xFFFFC82C),
           side: const BorderSide(color: Color(0xFFFFC82C)),
         )),
       ),

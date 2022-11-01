@@ -39,6 +39,7 @@ class HomeController {
 
   void logout() {
     prefs.setBool(SharedPreferencesKeys.userLogged, false);
+    print('aqui');
   }
 
   Future<void> addTodo(TodoModel todo) async {
